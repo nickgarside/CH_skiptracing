@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import AppRouter from './AppRouter';
-import './App.css';
 
-export default function App() {
+export default function SkipTracer () {
   const [file, setFile] = useState();
   const [array, setArray] = useState([]);
 
@@ -74,13 +72,6 @@ export default function App() {
 
   return (
     <div style={{color: 'white'}}>
-      <ul id='nav-list'>
-        <li><a href='http://localhost:3000/SkipTracer'>SkipTracer</a></li>
-        <li><a href='http://localhost:3000/OfferCalc'>OfferCalc</a></li>
-
-      </ul>
-      <AppRouter />
-
       <div style={{paddingTop: '20px', textAlign: "center"}}>
         <img src='logo185.png' alt="Logo" />
         <h1>The Chosen Homes Network - Skiptracing</h1>
