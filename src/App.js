@@ -13,7 +13,7 @@ export default function App() {
   const rgx_name = /^[a-zA-Z]+(?:\s+[a-zA-Z]+)*$/;
   const rgx_address_street = /^\s*\S+(?:\s+\S+){2}/;
   const rgx_state = /^([Aa][LKSZRAEPlkszraep]|[Cc][AOTaot]|[Dd][ECec]|[Ff][LMlm]|[Gg][AUau]|[Hh][Ii]|[Ii][ADLNadln]|[Kk][SYsy]|[Ll][Aa]|[Mm][ADEHINOPSTadehinopst]|[Nn][CDEHJMVYcdehjmvy]|[Oo][HKRhkr]|[Pp][ARWarw]|[Rr][Ii]|[Ss][CDcd]|[Tt][NXnx]|[Uu][Tt]|[Vv][AITait]|[Ww][AIVYaivy])$/;
-  const rgx_array = [rgx_zip, rgx_name, rgx_address_street, rgx_state]
+  const rgx_array = [rgx_zip, rgx_name, rgx_address_street, rgx_state];
 
   const applyColor = (string) => {
     string.val = string.val.trim();
@@ -42,7 +42,7 @@ export default function App() {
 
     const array = csvRows.map(i => {
       let values = i.split(",");
-      values.forEach((string, index) => string.trim())
+      values.forEach((string, index) => string.trim());
       const obj = csvHeader.reduce((object, header, index) => {
         object[header] = values[index];
         return object;
@@ -67,7 +67,7 @@ export default function App() {
   };
 
   const headerKeys = Object.keys(Object.assign({}, ...array));
-  headerKeys.unshift('Skiptrace #')
+  headerKeys.unshift('Skiptrace #');
 
   document.body.style = 'background: #1b1e27;';
 
@@ -75,17 +75,17 @@ export default function App() {
     <div style={{color: 'white'}}>
       <div style={{paddingTop: '20px', textAlign: "center"}}>
         <img src='logo185.png' alt="Logo" />
-        <h1>Chosen Homes Skiptracing API</h1>
+        <h1>The Chosen Homes Network - Skiptracing</h1>
       </div>
       <div style={{textAlign: 'left'}}>
-        <h2 style={{ textAlign: "left", paddingLeft: '20%'}}>Instructions</h2>
-        <ol style={{ textAlign: "left", paddingLeft: '20%'}}>
-          <li>Obtain your data that you wish to skiptrace.</li>
-          <li>Open your data in Excel and replace the relevant column headers with one of these names:</li>
+        <h2 style={{ textAlign: "left", paddingLeft: '15%'}}>Instructions</h2>
+        <ol style={{ textAlign: "left", paddingLeft: '15%', paddingRight: '15%'}}>
+          <li>Obtain your data that you wish to skiptrace from local governments (see Launchpad course).</li>
+          <li>Open your data in Excel and replace the relevant column headers with one of these names: (Insert instructional video link)</li>
           <em>property_address, property_city, property_state, property_zip, owner_first_name, owner_last_name, mailing_address, mailing_city, mailing_state, mailing_zip</em>
-          <li>Eliminate any extra lines or lines at the head of the file that are not the column headers.</li>
-          <li>Save your data as a .csv file and upload onto this page for format checks (highlighted in red).</li>
-          <li>When happy with the quality of your uploaded data, press the Get Skiptrace Results button to receive a .csv download with your results.</li>
+          <li>Eliminate any empty lines or lines at the beginning of the file that are not the column headers.</li>
+          <li>Save your data as a .csv file and select it when you press the 'Choose File' button. Then press 'Check Formatting' to see format problems (highlighted in red). A red cell doesn't necessarily mean it is incorrect.</li>
+          <li>When happy with the quality of your uploaded data, press the 'Get Skiptrace Results' button to receive a .csv download with your results. You will be charged $0.15 for every hit.</li>
         </ol>
       </div>
 
@@ -95,10 +95,10 @@ export default function App() {
           id={"csvFileInput"}
           accept={".csv"}
           onChange={handleOnChange}
-          style={{textAlign: 'left', paddingLeft: '20%', paddingTop: '10px', paddingBottom: '10px'}}
+          style={{textAlign: 'left', paddingLeft: '15%', paddingTop: '10px', paddingBottom: '10px'}}
         />
         <button onClick={(e) => {handleOnSubmit(e);}}>Check Formatting</button>
-        <button onClick={(e) => {handleOnSubmit(e);}}>Get Skiptrace Results</button>
+        <button onClick={(e) => {handleOnSubmit(e);}}>Get Skiptrace Results ($0.15 per successful hit)</button>
       </form>
 
       <br />
