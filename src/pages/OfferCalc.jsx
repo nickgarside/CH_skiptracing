@@ -125,7 +125,7 @@ export default function OfferCalc () {
                             onChange={setAssignmentFee}
                             name="assignmentfee"
                             label="AssignmentFee"
-                            placeholder='Assignemnt Fee ($)'
+                            placeholder='Assignment Fee ($)'
                         />
                     </div>
                     <div>
