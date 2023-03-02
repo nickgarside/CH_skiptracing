@@ -16,23 +16,38 @@ export default function MyNavbar() {
             <div class="collapse navbar-collapse" id="navbarSupportedContent" style={{display: 'flex'}}>
             <ul class="navbar-nav mr-auto" style={{display: 'flex', alignItems: 'center', listStyleType: 'none'}}>
                 <li class="nav-item">
-                <a class="nav-link" href="/skip" style={{textDecoration: 'none', color: 'black'}}>Skiptracing</a>
+                <a class="nav-link" href="/launch" style={{textDecoration: 'none', color: 'black'}}>Launchpad</a>
                 </li>
                 <li class="nav-item dropdown">
-                <a class="nav-link" href="/calc" id="nav-calc" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{textDecoration: 'none', color: 'black', marginLeft: '20px', marginRight: '20px'}}>
-                    Calculator
+                <a class="nav-link" href="/market" id="nav-calc" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{textDecoration: 'none', color: 'black', marginLeft: '20px', marginRight: '20px'}}>
+                    Marketplace
                 </a>
                 </li>
             </ul>
             </div>
 
-            <div style={{display: 'flex', marginRight: '20px', height: '30px'}}>
-            <form class="form-inline my-2 my-lg-0" style={{display: 'flex', alignItems: 'center', paddingRight: '20px'}}>
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style={{backgroundColor: '#2d81d6', borderColor: '#2d81d6', color: 'white', marginLeft: '5px'}}>Search</button>
-            </form>
-            <a href="/login" style={{color: '#2d81d6', textDecoration: 'none', display: 'flex', alignItems: 'center'}}>Login</a>
+            <div style={{display: 'flex'}}>
+                <div style={{color: 'black'}}>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent" style={{display: 'flex'}}>
+                        <ul class="navbar-nav mr-auto" style={{display: 'flex', alignItems: 'center', listStyleType: 'none'}}>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/skip" style={{textDecoration: 'none', color: 'black'}}>Skiptracing</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="/calc" id="nav-calc" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{textDecoration: 'none', color: 'black', marginLeft: '20px', marginRight: '20px'}}>Calculator</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div style={{display: 'flex', marginRight: '20px', height: '30px', alignItems: 'center'}}>
+                <form class="form-inline my-2 my-lg-0" style={{display: 'flex', alignItems: 'center', paddingRight: '20px'}}>
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style={{backgroundColor: '#2d81d6', borderColor: '#2d81d6', color: 'white', marginLeft: '5px'}}>Search</button>
+                </form>
+                <a href="/login" style={{color: '#2d81d6', textDecoration: 'none', display: 'flex', alignItems: 'center'}}>Login</a>
+                </div>
             </div>
+            
             
         </nav>
     );
