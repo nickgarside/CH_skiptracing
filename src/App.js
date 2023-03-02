@@ -5,7 +5,7 @@ import MyNavbar from "./components/MyNavbar";
 
 export default function App() {
   return (
-    <div style={{color: 'black'}}>
+    <div style={{color: 'black', fontFamily: 'MyFont'}}>
       <div>
       {<MyNavbar />}
       </div>
