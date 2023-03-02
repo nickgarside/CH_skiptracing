@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import MyNavbar from '../components/MyNavbar';
+
 
 export default function OfferCalc () {
     const [comp1, setComp1] = useState({'1mo': "", '2mo': "", '3mo': ""});
@@ -17,10 +19,17 @@ export default function OfferCalc () {
         return 0;
     }
 
+    let haveResults = false;
+
+    const showResults = () => {
+        haveResults = true;
+    };
+
     document.body.style = 'background: #1b1e27;';
 
     return (
         <div style={{color: 'white'}}>
+            
             <div style={{paddingTop: '20px', textAlign: "center"}}>
                 <img src='logo185.png' alt="Logo" />
                 <h1>The Chosen Homes Network - Offer Calculator</h1>
@@ -28,8 +37,9 @@ export default function OfferCalc () {
             <div style={{textAlign: "center"}}>
                 <form>
                     <div>
-                        <label>
-                            <select>
+                        <label style={{ color: 'white'}}>
+                            How many comparables do you have?: 
+                            <select name='selectedCompNum' defaultValue={comp1} style={{marginLeft: '5px'}}>
                                 <option value='comp1'>1 Comparable</option>
                                 <option value='comp2'>2 Comparables</option>
                                 <option value='comp3'>3 Comparables</option>
@@ -45,14 +55,14 @@ export default function OfferCalc () {
                             placeholder='Comparable #1 - 1 mo.($)'
                         />
                         <input
-                            value={comp2['2mo']}
+                            value={comp1['2mo']}
                             onChange={change1mo}
                             name="comp2"
                             label="Comp2"
                             placeholder='Comparable #1 - 2 mo.($)'
                         />
                         <input
-                            value={comp3['3mo']}
+                            value={comp1['3mo']}
                             onChange={change1mo}
                             name="comp3"
                             label="Comp3"
@@ -61,7 +71,7 @@ export default function OfferCalc () {
                     </div>
                     <div>
                         <input
-                            value={comp1['1mo']}
+                            value={comp2['1mo']}
                             onChange={change1mo}
                             name="comp1"
                             label="Comp1"
@@ -75,7 +85,7 @@ export default function OfferCalc () {
                             placeholder='Comparable #2 - 2 mo.($)'
                         />
                         <input
-                            value={comp3['3mo']}
+                            value={comp2['3mo']}
                             onChange={change1mo}
                             name="comp3"
                             label="Comp3"
@@ -84,14 +94,14 @@ export default function OfferCalc () {
                     </div>
                     <div>
                         <input
-                            value={comp1['1mo']}
+                            value={comp3['1mo']}
                             onChange={change1mo}
                             name="comp1"
                             label="Comp1"
                             placeholder='Comparable #3 - 1 mo.($)'
                         />
                         <input
-                            value={comp2['2mo']}
+                            value={comp3['2mo']}
                             onChange={change1mo}
                             name="comp2"
                             label="Comp2"
@@ -129,7 +139,10 @@ export default function OfferCalc () {
                         />
                     </div>
                     <div>
-                        <button type="submit" onSubmit={CalculateOffer()}>Calculate</button>
+                        <button type="submit" onSubmit={() => {CalculateOffer(); showResults();}}>Calculate</button>
+                    </div>
+                    <div>
+                        {haveResults ? <h2>results</h2> : null}
                     </div>
                 </form>
             </div>

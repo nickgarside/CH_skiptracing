@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import AppRouter from './AppRouter';
 import './App.css';
+import MyNavbar from "./components/MyNavbar";
 
 export default function App() {
   return (
-    <div style={{color: 'white'}}>
-      <ul id='nav-list'>
-        <li><a href='https://ch-skiptracing.vercel.app/skip'>SkipTracer</a></li>
-        <li><a href='https://ch-skiptracing.vercel.app/calc'>OfferCalc</a></li>
-      </ul>
+    <div style={{color: 'black'}}>
+      <div>
+      {<MyNavbar />}
+      </div>
+      <div>
       <AppRouter />
+      </div>
     </div>
   );
 }
